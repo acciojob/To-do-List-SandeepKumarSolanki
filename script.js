@@ -5,9 +5,9 @@ let todoList = document.getElementById('todoList');
 
 btn.addEventListener('click' , (e)=>{
 	e.preventDefault();
-	let InputFieldValue = InputField.value;
-	if(InputFieldValue.length > 0){
-		let li = document.createElement('li');
+	let InputFieldValue = InputField.value.trim();
+	if(InputFieldValue !== ''){
+		const li = document.createElement('li');
 		li.innerText = `${InputFieldValue}`
 		todoList.append(li);
 	}
