@@ -1,16 +1,23 @@
+// Get references to input, button, and list
 let InputField = document.getElementById('newTodoInput');
 let btn = document.getElementById('addTodoBtn');
 let todoList = document.getElementById('todoList');
 
+// Handle button click
 btn.addEventListener('click', function (e) {
-  e.preventDefault(); // stop form submit if it's in a form
+  e.preventDefault(); // Prevent any default behavior (just in case)
 
-  const InputFieldValue = InputField.value.trim(); // trim to ignore accidental spaces
+  let InputFieldValue = InputField.value.trim(); // Remove leading/trailing spaces
 
   if (InputFieldValue !== '') {
-    const li = document.createElement('li');
+    // Create new list item
+    let li = document.createElement('li');
     li.innerText = InputFieldValue;
-    todoList.appendChild(li); // use appendChild for better clarity
-    InputField.value = '';    // clear input only if item added
+
+    // Add list item to the todo list
+    todoList.appendChild(li);
+
+    // Clear the input field after adding
+    InputField.value = '';
   }
 });
